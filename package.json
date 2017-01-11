@@ -1,15 +1,23 @@
 {
-  "name": "speedy",
-  "version": "1.0.0",
-  "description": "Auto internet speed tester and logger",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "speedtest",
-    "logger"
-  ],
-  "author": "mattymil",
-  "license": "ISC"
+    "name": "speedy",
+    "version": "1.0.0",
+    "description": "Auto internet speed tester and logger",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://bitbucket.org/mattymil/speedy.git"
+    },
+    "keywords": [
+        "speedtest",
+        "logger"
+    ],
+    "author": "mattymil",
+    "license": "ISC",
+    "dependencies": {
+        "firebase": "^3.6.5",
+        "speedtest-net": "^1.2.12"
+    }
 }
