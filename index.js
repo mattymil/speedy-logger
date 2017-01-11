@@ -8,7 +8,7 @@ firebase.initializeApp(dbConfig);
 // Get a reference to the database service
 const database = firebase.database();
 
-// initialize the speedtest
+// initialize the speedtest with the appropriate test time and pingCount
 const test = speedTest({maxTime: 20000});
 
 // log results to the database
