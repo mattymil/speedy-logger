@@ -1,17 +1,17 @@
-var firebase = require('firebase');
-var speedTest = require('speedtest-net')
-var config = require('./config.json');
-var dbConfig = config.dbConfig;
+let firebase = require('firebase');
+let speedTest = require('speedtest-net')
+let config = require('./config.json');
+let dbConfig = config.dbConfig;
 
 firebase.initializeApp(dbConfig);
 
 // Get a reference to the database service
-var database = firebase.database();
+const database = firebase.database();
 
 // initialize the speedtest
 const test = speedTest({maxTime: 20000});
 
-// on data log it to the database
+// log results to the database
 test.on('data', data => {
   database.ref('tests/' + Date.now()).set(data);
   console.log(data);
