@@ -14,12 +14,12 @@ const test = speedTest({maxTime: config.testConfig.testTime})
 // log results to the database
 test.on('data', data => {
   //add a time tested property to the object
-  database.ref('tests/' + Date.now()).set(data)
+  database.ref(config.testConfig.testsLocation + Date.now()).set(data)
   process.exit()
 });
 
 // on error log it to the database
 test.on('error', err => {
-  database.ref('errors/' + Date.now()).set(error)
+  database.ref(config.testConfig.errorsLocation + Date.now()).set(error)
   process.exit()
 });

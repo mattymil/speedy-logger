@@ -5,7 +5,10 @@
         "databaseURL": "https://speedy-f57c3.firebaseio.com"
     },
     "testConfig": {
-        "testTime": 20000
+        "testTime": 20000,
+        "testsLocation": "tests/",
+        "errorsLocation": "errors/"
+
     }
 
 }
