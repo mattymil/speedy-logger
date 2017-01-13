@@ -1,3 +1,6 @@
+## Description
+Speedy-logger is an internet speed test application that will run on a preconfigured timing interval. Upon test completion the results are logged in firebase.
+
 ## Configuration
 
 All configuration options can be found in ```config.json```.
@@ -46,3 +49,4 @@ All configuration options can be found in ```config.json```.
 - 1.0.5 Updated Readme (Fixed Typo)
 - 1.0.6 Fixed error in test error handler
 - 1.0.7 Added interval functionality
+- 1.0.8 Added description to readme
