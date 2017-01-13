@@ -1,3 +1,5 @@
+"use strict"
+
 let firebase = require('firebase')
 let speedTest = require('./lib/speedTest.js')
 let config = require('./config/config.json')

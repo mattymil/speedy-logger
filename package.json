@@ -1,6 +1,6 @@
 {
     "name": "speedy-logger",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Auto internet speed tester and logger using speedtest-net and firebase",
     "main": "index.js",
     "scripts": {
