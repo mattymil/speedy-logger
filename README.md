@@ -42,4 +42,4 @@ All configuration options can be found in ```config.json```.
 
 ## Versions
 - 1.0.4 Added Readme
-- 1.05 Updated Readme (Fixed Typo)
+- 1.0.5 Updated Readme (Fixed Typo)
