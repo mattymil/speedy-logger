@@ -1,14 +1,13 @@
 {
     "name": "speedy-logger",
-    "version": "1.0.0",
+    "version": "1.0.4",
     "description": "Auto internet speed tester and logger using speedtest-net and firebase",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
-        "type": "git",
-        "url": "https://bitbucket.org/mattymil/speedy.git"
+        "url": "https://bitbucket.org/digitalvecte/speedy.git"
     },
     "keywords": [
         "speedtest",

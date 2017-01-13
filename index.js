@@ -9,7 +9,7 @@ firebase.initializeApp(dbConfig)
 const database = firebase.database()
 
 // initialize the speedtest with the appropriate test time and pingCount
-const test = speedTest({maxTime: 20000})
+const test = speedTest({maxTime: config.testConfig.testTime})
 
 // log results to the database
 test.on('data', data => {
