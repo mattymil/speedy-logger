@@ -20,6 +20,6 @@ test.on('data', data => {
 
 // on error log it to the database
 test.on('error', err => {
-  database.ref(config.testConfig.errorsLocation + Date.now()).set(error)
+  database.ref(config.testConfig.errorsLocation + Date.now()).set(err)
   process.exit()
 });
