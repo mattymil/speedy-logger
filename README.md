@@ -7,6 +7,7 @@ All configuration options can be found in ```config.json```.
   - ```testTime``` property which sets the maximum amount of time the test will run. Recommended time is 20000ms as this provides most stable results.
   - ```testsLocation``` property defines where test data will be stored relative to your firebase root. Default is ``` your_firebase_root/tests```
   - ```errorsLocation``` property defines where test data will be stored relative to your firebase root. Default is ``` your_firebase_root/errors```
+  - ```testInterval``` how often should the test be run, cannot be smaller than testTime or larger than 2147483647ms
 
 ## Data Structure
 - Test data and error data will be stored at your_firebase_root/tests and your_firebase_root/error respectively.
@@ -44,3 +45,4 @@ All configuration options can be found in ```config.json```.
 - 1.0.4 Added Readme
 - 1.0.5 Updated Readme (Fixed Typo)
 - 1.0.6 Fixed error in test error handler
+- 1.0.7 Added interval functionality

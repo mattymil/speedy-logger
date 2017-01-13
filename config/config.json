@@ -7,7 +7,8 @@
     "testConfig": {
         "testTime": 20000,
         "testsLocation": "tests/",
-        "errorsLocation": "errors/"
+        "errorsLocation": "errors/",
+        "testInterval": 36000000
 
     }
 

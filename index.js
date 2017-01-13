@@ -1,25 +1,20 @@
 let firebase = require('firebase')
-let speedTest = require('speedtest-net')
-let config = require('./config.json')
-let dbConfig = config.dbConfig
+let speedTest = require('./lib/speedTest.js')
+let config = require('./config/config.json')
+const privateConfig = require('./config/privateConfig.json')
+const maxInterval = privateConfig.testConfig.maxInterval
 
-firebase.initializeApp(dbConfig)
 
-// Get a reference to the database service
+//protect from test interval value being outside of spec
+if(config.testConfig.testInterval < config.testConfig.testTime || config.testConfig.testInterval > maxInterval){
+  config.testConfig.testInterval = privateConfig.testConfig.defaultInterval
+}
+
+// Initialize the DB and get a reference to it
+firebase.initializeApp(config.dbConfig)
 const database = firebase.database()
 
-// initialize the speedtest with the appropriate test time and pingCount
-const test = speedTest({maxTime: config.testConfig.testTime})
-
-// log results to the database
-test.on('data', data => {
-  //add a time tested property to the object
-  database.ref(config.testConfig.testsLocation + Date.now()).set(data)
-  process.exit()
-});
-
-// on error log it to the database
-test.on('error', err => {
-  database.ref(config.testConfig.errorsLocation + Date.now()).set(err)
-  process.exit()
-});
+// run speed test on an interval
+let t = setInterval(() => {
+  speedTest.go(database, config)
+}, config.testConfig.testInterval)

@@ -1,0 +1,6 @@
+{
+  "testConfig": {
+    "maxInterval": 2147483647,
+    "defaultInterval": 3600000
+  }
+}
