@@ -2,7 +2,7 @@
 
 All configuration options can be found in ```config.json```.
 
-- "dbConfig" object contains usual settings for database and auth only.
+- ```dbConfig``` object contains usual settings for database and auth only.
 - ```testConfig``` object contains
   - ```testTime``` property which sets the maximum amount of time the test will run. Recommended time is 20000ms as this provides most stable results.
   - ```testsLocation``` property defines where test data will be stored relative to your firebase root. Default is ``` your_firebase_root/tests```
@@ -42,3 +42,4 @@ All configuration options can be found in ```config.json```.
 
 ## Versions
 - 1.0.4 Added Readme
+- 1.05 Updated Readme (Fixed Typo)
