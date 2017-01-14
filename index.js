@@ -16,6 +16,9 @@ if(config.testConfig.testInterval < config.testConfig.testTime || config.testCon
 firebase.initializeApp(config.dbConfig)
 const database = firebase.database()
 
+//initial run to capture results at t-0
+speedTest.go(database, config)
+
 // run speed test on an interval
 let t = setInterval(() => {
   speedTest.go(database, config)
