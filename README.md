@@ -51,3 +51,4 @@ All configuration options can be found in ```config.json```.
 - 1.0.7 Added interval functionality
 - 1.0.8 Added description to readme
 - 1.0.9 Added strict mode
+- 1.1.0 Added initial test run to gather results at t-0
