@@ -8,7 +8,7 @@
         "testTime": 20000,
         "testsLocation": "tests/",
         "errorsLocation": "errors/",
-        "testInterval": 36000000
+        "testInterval": 3600000
 
     }
 

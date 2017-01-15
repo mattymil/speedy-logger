@@ -52,3 +52,4 @@ All configuration options can be found in ```config.json```.
 - 1.0.8 Added description to readme
 - 1.0.9 Added strict mode
 - 1.1.0 Added initial test run to gather results at t-0
+- 1.1.1 Updated repo URL
