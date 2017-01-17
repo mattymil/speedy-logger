@@ -55,3 +55,4 @@ All configuration options can be found in ```config.json```.
 - 1.1.1 Updated repo URL
 - 1.1.2 Bump
 - 1.1.3 Fixed error in default testInterval
+- 1.1.4 Changed repo to github from bitbucket
