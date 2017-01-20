@@ -1,5 +1,5 @@
 ## Description
-Speedy-logger is an internet speed test application that will run on a preconfigured timing interval. Upon test completion the results are logged in firebase.
+Speedy-logger is an internet speed test application that will run on a preconfigured timing interval. Upon test completion the results are logged in firebase. Check out the sister project [Speedy-Web](https://github.com/mattymil/speedy-web) which provides a deployable web-app to view the bandwidth and latency results.
 
 ## Configuration
 
@@ -56,3 +56,4 @@ All configuration options can be found in ```config.json```.
 - 1.1.2 Bump
 - 1.1.3 Fixed error in default testInterval
 - 1.1.4 Changed repo to github from bitbucket
+- 1.2.0 Added reference to speedy-web
