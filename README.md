@@ -1,5 +1,5 @@
 ## Description
-Speedy-logger is an internet speed test application that will run on a preconfigured timing interval. Upon test completion the results are logged in firebase. Check out the sister project [Speedy-Web](https://github.com/mattymil/speedy-web) which provides a deployable web-app to view the bandwidth and latency results.
+Speedy-logger is an internet speed test application that will run on a preconfigured timing interval. If the test fails, retries will be made on a more frequent configurable interval until connectivity is restored. Upon test completion the results are logged in firebase. Check out the sister project [Speedy-Web](https://github.com/mattymil/speedy-web) which provides a deployable web-app to view the bandwidth and latency results.
 
 ## Configuration
 
@@ -10,10 +10,11 @@ All configuration options can be found in ```config.json```.
   - ```testTime``` property which sets the maximum amount of time the test will run. Recommended time is 20000ms as this provides most stable results.
   - ```testsLocation``` property defines where test data will be stored relative to your firebase root. Default is ``` your_firebase_root/tests```
   - ```errorsLocation``` property defines where test data will be stored relative to your firebase root. Default is ``` your_firebase_root/errors```
-  - ```testInterval``` how often should the test be run, cannot be smaller than testTime or larger than 2147483647ms
+  - ```testInterval``` how often should the test be run, cannot be smaller than testTime or larger than 2147483647ms. Default is 3600000 ms.
+  - ```retryInterval``` in the event of a test failure i.e. no connectivity how often should retries be made. Default is 60000 ms.
 
 ## Data Structure
-- Test data and error data will be stored at your_firebase_root/tests and your_firebase_root/error respectively.
+- Test data and error data will be stored at your_firebase_root/tests and your_firebase_root/errors respectively.
 - Each test object is stored in firebase with the test timestamp as its key. For graphing or any other purposes this can be used as the test date and time as the test data object does not include a test time
 - The test data object is as follows (taken from speedtest-net library readme)
   - ```speeds```:

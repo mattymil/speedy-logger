@@ -3,13 +3,23 @@
 let firebase = require('firebase')
 let speedTest = require('./lib/speedTest.js')
 let config = require('./config/config.json')
+
+// retry interval object
+let retryIntervalTimer = undefined
+let testInterval = config.testConfig.testInterval
+let retryInterval = config.testConfig.retryInterval
 const privateConfig = require('./config/privateConfig.json')
 const maxInterval = privateConfig.testConfig.maxInterval
-
+const testTime = config.testConfig.testTime
 
 //protect from test interval value being outside of spec
-if(config.testConfig.testInterval < config.testConfig.testTime || config.testConfig.testInterval > maxInterval){
-  config.testConfig.testInterval = privateConfig.testConfig.defaultInterval
+if(testInterval < testTime || testInterval > maxInterval){
+  testInterval = privateConfig.testConfig.defaultInterval
+}
+
+// protect retryInterval from being out of spec
+if( retryInterval < testTime || retryInterval > maxInterval){
+  retryInterval = privateConfig.testConfig.defaultRetryInterval
 }
 
 // Initialize the DB and get a reference to it
@@ -20,20 +30,30 @@ const database = firebase.database()
 speedTest.go(database, config)
 
 // run speed test on an interval
-let t = setInterval(() => {
-  speedTest.go(database, config, function(success) {
+let testIntervalTimer = setInterval(() => {
 
-    // retry interval object
-    let r = undefined
+  // If retries are under way do not run the standard testInterval
+  if(retryIntervalTimer == undefined){
+    speedTest.go(database, config, function(success) {
 
-    // If test is not a success run it at retryInterval. If test is successful
-    // and retry interval object is defined clear the interval
-    if(!success) {
+      // If test is not a success and retry interval timer is not already running
+      // run a seperate series of tests at retryInterval. Testing for presence
+      // of retryIntervalTimer is also necessary because test error
+      // may result in more than error event and subsequent callback from
+      // speedtest module which will spawn more than one retryIntervalTimer's
+      if(!success && retryIntervalTimer == undefined) {
+        retryIntervalTimer = setInterval(() => {
+          speedTest.go(database, config, function(success){
 
-      r = setInterval(() => {
-        
-      })
-
-    } else if(success && r != undefined)
-  })
-}, config.testConfig.testInterval)
+            // if retry is successful, clear the retryInterval timer and set to
+            // undefined
+            if(success){
+              clearTimeout(retryIntervalTimer)
+              retryIntervalTimer = undefined
+            }
+          })
+        }, retryInterval)
+      }
+    })
+  }
+}, testInterval)
