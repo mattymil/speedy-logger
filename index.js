@@ -21,5 +21,19 @@ speedTest.go(database, config)
 
 // run speed test on an interval
 let t = setInterval(() => {
-  speedTest.go(database, config)
+  speedTest.go(database, config, function(success) {
+
+    // retry interval object
+    let r = undefined
+
+    // If test is not a success run it at retryInterval. If test is successful
+    // and retry interval object is defined clear the interval
+    if(!success) {
+
+      r = setInterval(() => {
+        
+      })
+
+    } else if(success && r != undefined)
+  })
 }, config.testConfig.testInterval)
