@@ -58,3 +58,5 @@ All configuration options can be found in ```config.json```.
 - 1.1.3 Fixed error in default testInterval
 - 1.1.4 Changed repo to github from bitbucket
 - 1.2.0 Added reference to speedy-web
+- 1.3.0 Added test failure retry functionality
+- 1.3.1 Fiixed error in readme.
