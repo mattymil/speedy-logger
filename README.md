@@ -61,3 +61,4 @@ All configuration options can be found in ```config.json```.
 - 1.3.0 Added test failure retry functionality
 - 1.3.1 Fixed error in readme.
 - 1.3.2 Minor fix
+- 1.3.3 Readme fix
