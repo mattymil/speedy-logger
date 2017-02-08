@@ -1,15 +1,15 @@
 {
     "dbConfig": {
-        "apiKey": "",
-        "authDomain": "",
-        "databaseURL": ""
+      "apiKey": "AIzaSyDKpxmykTkOS26PlbfIYXQoJAJmBSLQh0Y",
+      "authDomain": "speedy-f57c3.firebaseapp.com",
+      "databaseURL": "https://speedy-f57c3.firebaseio.com"
     },
-    "testConfig": {
-        "testTime": 20000,
-        "testsLocation": "tests/",
-        "errorsLocation": "errors/",
-        "testInterval": 3600000,
-        "retryInterval": 60000
-    }
+  "testConfig": {
+    "testTime": 20000,
+    "testsLocation": "tests/",
+    "errorsLocation": "errors/",
+    "testInterval": 3600000,
+    "retryInterval": 60000
+  }
 
 }
